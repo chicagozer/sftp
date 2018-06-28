@@ -1,0 +1,6 @@
+if [[ -v AWS_USE_IAM ]]; then
+   s3fs -o iam_role='auto' -o allow_other,umask=022 $S3_BUCKET /home
+else
+   s3fs -o allow_other,umask=022 $S3_BUCKET /home
+fi
+ 
